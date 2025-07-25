@@ -1,11 +1,4 @@
 {
-  "version": 2,
-  "name": "air-assist-backend",
-  "functions": {
-    "api/openai-realtime.js": {
-      "maxDuration": 30
-    }
-  },
   "env": {
     "OPENAI_API_KEY": "@openai_api_key"
   }
