@@ -156,6 +156,22 @@ app.post('/api/chat/completions', async (req, res) => {
   }
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Air Assist Backend API',
+    status: 'OK',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      keyStatus: '/api/key-status',
+      chatCompletions: '/api/chat/completions',
+      websocket: '/openai-realtime'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
